@@ -1,0 +1,162 @@
+{
+  "species": [
+    {
+      "name": "Booleanites",
+      "dietary_restrictions": "None",
+      "preferred_ingredients": [
+        "Galactic Garlic",
+        "Binary Beans",
+        "Nebula Nuts"
+      ],
+      "least_preferred_ingredients": [
+        "Starlight Sauce",
+        "Comet Cheese"
+      ]
+    },
+    {
+      "name": "Cryptonians",
+      "dietary_restrictions": "None",
+      "preferred_ingredients": [
+        "Black Hole Berries",
+        "Supernova Saffron",
+        "Solar Salt"
+      ],
+      "least_preferred_ingredients": [
+        "Astro Mushroom",
+        "Interstellar Iceberg Lettuce"
+      ]
+    },
+    {
+      "name": "Algorithmians",
+      "dietary_restrictions": [
+        "Comet Cheese",
+        "Nebula Noodles"
+      ],
+      "preferred_ingredients": [
+        "Galactic Garlic",
+        "Binary Beans",
+        "Cosmic Carrots"
+      ],
+      "least_preferred_ingredients": [
+        "Nebula Nuts"
+      ]
+    },
+    {
+      "name": "Bit-Byte Beings",
+      "dietary_restrictions": [
+        "Nebula Noodles",
+        "Black Hole Berries"
+      ],
+      "preferred_ingredients": [
+        "Quasar Spice",
+        "Galaxy Grains",
+        "Satellite Soy"
+      ],
+      "least_preferred_ingredients": [
+        "Comet Cheese"
+      ]
+    },
+    {
+      "name": "Cybernetic Cygnians",
+      "dietary_restrictions": [
+        "Meteor Steak",
+        "Comet Cheese"
+      ],
+      "preferred_ingredients": [
+        "Nebula Noodles",
+        "Stellar Kale",
+        "Astro Mushroom"
+      ],
+      "least_preferred_ingredients": [
+        "Black Hole Berries"
+      ]
+    },
+    {
+      "name": "Scripting Sylphs",
+      "dietary_restrictions": [
+        "Nebula Nuts",
+        "Galactic Garlic"
+      ],
+      "preferred_ingredients": [
+        "Starlight Sauce",
+        "Interstellar Iceberg Lettuce",
+        "Supernova Saffron"
+      ],
+      "least_preferred_ingredients": [
+        "Comet Cheese"
+      ]
+    },
+    {
+      "name": "CodeCrafters",
+      "dietary_restrictions": [
+        "Nebula Noodles",
+        "Black Hole Berries"
+      ],
+      "preferred_ingredients": [
+        "Galactic Garlic",
+        "Stellar Kale",
+        "Comet Cheese"
+      ],
+      "least_preferred_ingredients": [
+        "Nebula Nuts"
+      ]
+    },
+    {
+      "name": "Logic Lords",
+      "dietary_restrictions": [
+        "Nebula Noodles",
+        "Solar Salt"
+      ],
+      "preferred_ingredients": "None",
+      "least_preferred_ingredients": [
+        "Black Hole Berries",
+        "Interstellar Iceberg Lettuce"
+      ]
+    },
+    {
+      "name": "Debugians",
+      "dietary_restrictions": [
+        "Black Hole Berries",
+        "Supernova Saffron"
+      ],
+      "preferred_ingredients": [
+        "Galactic Garlic",
+        "Nebula Noodles",
+        "Comet Cheese"
+      ],
+      "least_preferred_ingredients": "None"
+    },
+    {
+      "name": "Bug-Busters",
+      "dietary_restrictions": [
+        "Galactic Garlic",
+        "Nebula Nuts"
+      ],
+      "preferred_ingredients": [
+        "Quasar Spice",
+        "Astro Mushroom",
+        "Stellar Kale"
+      ],
+      "least_preferred_ingredients": [
+        "Comet Cheese",
+        "Black Hole Berries"
+      ]
+    },
+    {
+      "name": "Pixel Protectors",
+      "dietary_restrictions": [
+        "Black Hole Berries",
+        "Galactic Garlic"
+      ],
+      "preferred_ingredients": [
+        "Interstellar Iceberg Lettuce",
+        "Nebula Nuts",
+        "Supernova Saffron"
+      ],
+      "least_preferred_ingredients": [
+        "Astro Mushroom",
+        "Comet Cheese"
+      ]
+    }
+  ]
+}

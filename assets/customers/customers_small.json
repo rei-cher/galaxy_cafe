@@ -1,0 +1,34 @@
+{
+    "customers": [
+      {
+        "name": "Glitkor Xyrr",
+        "species": "Debugians",
+        "personality": "picky",
+        "credits": 25
+      },
+      {
+        "name": "Zarlon Nebulox",
+        "species": "Cryptonians",
+        "personality": "adventurous",
+        "credits": 40
+      },
+      {
+        "name": "Binarytus Fluxor",
+        "species": "Booleanites",
+        "personality": "neutral",
+        "credits": 15
+      },
+      {
+        "name": "Algorthrin Axion",
+        "species": "Algorithmians",
+        "personality": "picky",
+        "credits": 35
+      },
+      {
+        "name": "Codex Prime",
+        "species": "CodeCrafters",
+        "personality": "neutral",
+        "credits": 30
+      }
+    ]
+  }

@@ -1,0 +1,89 @@
+{
+    "ingredients": {
+        "Quasar Spice": "Rare",
+        "Astro Mushroom": "Common",
+        "Stellar Kale": "Uncommon",
+        "Galactic Garlic": "Common",
+        "Comet Cheese": "Rare",
+        "Nebula Noodles": "Common",
+        "Starlight Sauce": "Uncommon",
+        "Binary Beans": "Common",
+        "Solar Salt": "Uncommon",
+        "Cosmic Carrots": "Common",
+        "Lunar Lentils": "Rare",
+        "Supernova Saffron": "Rare",
+        "Asteroid Avocado": "Uncommon",
+        "Planetary Pepper": "Common",
+        "Interstellar Iceberg Lettuce": "Rare",
+        "Satellite Soy": "Uncommon",
+        "Exoplanet Eggplant": "Common",
+        "Galaxy Grains": "Common",
+        "Black Hole Berries": "Rare",
+        "Nebula Nuts": "Uncommon",
+        "Cosmic Chilies": "Legendary",
+        "Space Truffles": "Legendary"
+    },
+
+    "menu": [
+        {
+            "name": "Cosmic Carbonara",
+            "ingredients": ["Nebula Noodles", "Comet Cheese", "Galactic Garlic", "Solar Salt", "Stellar Kale"],
+            "price": 18
+        },
+        {
+            "name": "Solar System Sushi Roll",
+            "ingredients": ["Astro Mushroom", "Galactic Garlic", "Stellar Kale", "Nebula Nuts", "Satellite Soy"],
+            "price": 20
+        },
+        {
+            "name": "Asteroid Pasta Primavera",
+            "ingredients": ["Stellar Kale", "Galactic Garlic", "Astro Mushroom", "Nebula Noodles", "Cosmic Carrots"],
+            "price": 17
+        },
+        {
+            "name": "Quasar Quesadilla",
+            "ingredients": ["Quasar Spice", "Comet Cheese", "Galactic Garlic", "Stellar Kale", "Astro Mushroom"],
+            "price": 14
+        },
+        {
+            "name": "Neutron Noodle Soup",
+            "ingredients": ["Nebula Noodles", "Stellar Kale", "Galactic Garlic", "Binary Beans", "Solar Salt"],
+            "price": 12
+        },
+        {
+            "name": "Cosmic Casserole",
+            "ingredients": ["Astro Mushroom", "Stellar Kale", "Galactic Garlic", "Nebula Noodles", "Starlight Sauce", "Binary Beans"],
+            "price": 16
+        },
+        {
+            "name": "Meteor Steak",
+            "ingredients": ["Quasar Spice", "Comet Cheese", "Solar Salt", "Cosmic Carrots"],
+            "price": 23
+        },
+        {
+            "name": "Space Slug Burger",
+            "ingredients": ["Astro Mushroom", "Galactic Garlic", "Nebula Noodles", "Comet Cheese", "Planetary Pepper"],
+            "price": 13
+        },
+        {
+            "name": "Galactic Garden Salad",
+            "ingredients": ["Stellar Kale", "Galactic Garlic", "Interstellar Iceberg Lettuce", "Asteroid Avocado", "Nebula Nuts"],
+            "price": 10
+        },
+        {
+            "name": "Exoplanet Stir-Fry",
+            "ingredients": ["Stellar Kale", "Binary Beans", "Solar Salt", "Exoplanet Eggplant", "Satellite Soy"],
+            "price": 17
+        },
+        {
+            "name": "Black Hole Burger",
+            "ingredients": ["Comet Cheese", "Galactic Garlic", "Nebula Noodles", "Space Truffles", "Planetary Pepper"],
+            "price": 26
+        },
+        {
+            "name": "Interstellar Pasta",
+            "ingredients": ["Nebula Noodles", "Galactic Garlic", "Starlight Sauce", "Cosmic Chilies", "Satellite Soy"],
+            "price": 28
+        }
+    ]
+}

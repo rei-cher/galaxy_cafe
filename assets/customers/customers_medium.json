@@ -1,0 +1,70 @@
+{
+    "customers": [
+      {
+        "name": "Glitch Guru",
+        "species": "Debugians",
+        "personality": "picky",
+        "credits": 25
+      },
+      {
+        "name": "Cosmic Voyager",
+        "species": "Cryptonians",
+        "personality": "adventurous",
+        "credits": 40
+      },
+      {
+        "name": "Binary Whiz",
+        "species": "Booleanites",
+        "personality": "neutral",
+        "credits": 15
+      },
+      {
+        "name": "Algorithm Master",
+        "species": "Algorithmians",
+        "personality": "picky",
+        "credits": 35
+      },
+      {
+        "name": "Code Crusader",
+        "species": "CodeCrafters",
+        "personality": "neutral",
+        "credits": 30
+      },
+      {
+        "name": "Logic Luminary",
+        "species": "Logic Lords",
+        "personality": "adventurous",
+        "credits": 45
+      },
+      {
+        "name": "Pixel Paladin",
+        "species": "Pixel Protectors",
+        "personality": "adventurous",
+        "credits": 40
+      },
+      {
+        "name": "Bug Blitzer",
+        "species": "Bug-Busters",
+        "personality": "neutral",
+        "credits": 30
+      },
+      {
+        "name": "Byte Bender",
+        "species": "Bit-Byte Beings",
+        "personality": "neutral",
+        "credits": 25
+      },
+      {
+        "name": "Cyber Crusader",
+        "species": "Cybernetic Cygnians",
+        "personality": "adventurous",
+        "credits": 40
+      },
+      {
+        "name": "Script Sage",
+        "species": "Scripting Sylphs",
+        "personality": "picky",
+        "credits": 20
+      }
+    ]
+  }

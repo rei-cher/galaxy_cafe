@@ -1,0 +1,124 @@
+{
+    "customers": [
+      {
+        "name": "Glitchflux Zyrx",
+        "species": "Debugians",
+        "personality": "picky",
+        "credits": 25
+      },
+      {
+        "name": "Zorvax Starseeker",
+        "species": "Cryptonians",
+        "personality": "adventurous",
+        "credits": 40
+      },
+      {
+        "name": "Binaryon Fluxorix",
+        "species": "Debugians",
+        "personality": "neutral",
+        "credits": 15
+      },
+      {
+        "name": "Algorthus Xiron",
+        "species": "Algorithmians",
+        "personality": "picky",
+        "credits": 35
+      },
+      {
+        "name": "Codeon Primevus",
+        "species": "Cybernetic Cygnians",
+        "personality": "neutral",
+        "credits": 30
+      },
+      {
+        "name": "Logarithar Magnik",
+        "species": "Bug-Busters",
+        "personality": "adventurous",
+        "credits": 45
+      },
+      {
+        "name": "Pixelix Guardianon",
+        "species": "Bit-Byte Beings",
+        "personality": "adventurous",
+        "credits": 40
+      },
+      {
+        "name": "Blixer Eradikron",
+        "species": "Cryptonians",
+        "personality": "neutral",
+        "credits": 30
+      },
+      {
+        "name": "Bytarian Shiftox",
+        "species": "Booleanites",
+        "personality": "neutral",
+        "credits": 25
+      },
+      {
+        "name": "Cyberion Crusadus",
+        "species": "Cybernetic Cygnians",
+        "personality": "adventurous",
+        "credits": 40
+      },
+      {
+        "name": "Scribota Enigmatron",
+        "species": "Scripting Sylphs",
+        "personality": "picky",
+        "credits": 20
+      },
+      {
+        "name": "Quarka the Seeker",
+        "species": "Booleanites",
+        "personality": "picky",
+        "credits": 30
+      },
+      {
+        "name": "Galaxar the Explorer",
+        "species": "Logic Lords",
+        "personality": "adventurous",
+        "credits": 50
+      },
+      {
+        "name": "Nova the Wanderer",
+        "species": "Cybernetic Cygnians",
+        "personality": "neutral",
+        "credits": 20
+      },
+      {
+        "name": "Lunar Lumen",
+        "species": "Logic Lords",
+        "personality": "adventurous",
+        "credits": 45
+      },
+      {
+        "name": "Gravity Graviton",
+        "species": "Cryptonians",
+        "personality": "adventurous",
+        "credits": 40
+      },
+      {
+        "name": "Comet Cosmos",
+        "species": "Cybernetic Cygnians",
+        "personality": "neutral",
+        "credits": 30
+      },
+      {
+        "name": "Solar Spark",
+        "species": "Bug-Busters",
+        "personality": "neutral",
+        "credits": 35
+      },
+      {
+        "name": "Nucleus Nexus",
+        "species": "Pixel Protectors",
+        "personality": "picky",
+        "credits": 25
+      },
+      {
+        "name": "Plasma Pulse",
+        "species": "CodeCrafters",
+        "personality": "neutral",
+        "credits": 30
+      }
+    ]
+  }
