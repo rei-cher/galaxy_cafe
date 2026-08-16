@@ -28,6 +28,9 @@ class Customer(Species):
     def get_credit(self) -> str:
         return self._credit
 
+    def set_credit(self, credit: int):
+        self._credit = credit
+
 def load_customers(filename: str, species: dict[str, Species]) -> list[Customer]:
     with open(filename, "r") as file:
         data = json.load(file)

@@ -262,6 +262,7 @@ Interstellar Iceberg Lettuce	assets/menu.json	/^        "Interstellar Iceberg Le
 Introduction	docs/galactic_cafe_instructions.md	/^## Introduction$/;"	s	chapter:The Galactic Cafe
 Lunar Lentils	assets/menu.json	/^        "Lunar Lentils": "Rare",$/;"	s	object:ingredients
 Main Application:	docs/galactic_cafe_instructions.md	/^### Main Application:$/;"	S	section:The Galactic Cafe""Requirements
+Menu_Item	src/menu.py	/^class Menu_Item:$/;"	c
 Nebula Noodles	assets/menu.json	/^        "Nebula Noodles": "Common",$/;"	s	object:ingredients
 Nebula Nuts	assets/menu.json	/^        "Nebula Nuts": "Uncommon",$/;"	s	object:ingredients
 PROJECT_TITLE	CMakeLists.txt	/^set(PROJECT_TITLE$/;"	v
@@ -281,7 +282,9 @@ Supernova Saffron	assets/menu.json	/^        "Supernova Saffron": "Rare",$/;"	s	
 The Galactic Cafe	docs/galactic_cafe_instructions.md	/^# The Galactic Cafe$/;"	c
 The Galactic Cafe - Rubric	docs/rubric.md	/^# The Galactic Cafe - Rubric$/;"	c
 __init__	src/customer.py	/^    def __init__(self, name: str, species: str, personality: str, credit: int):$/;"	m	class:Customer
+__init__	src/menu.py	/^    def __init__(self, name: str, ingredients: list[str], price: int):$/;"	m	class:Menu_Item
 __init__	src/species.py	/^    def __init__(self, name: str, restrictions: list[str], preferences: list[str], dislikes: lis/;"	m	class:Species
+clear_screen	src/screen.py	/^def clear_screen():$/;"	f
 credits	assets/customers/customers_large.json	/^        "credits": 15$/;"	n	object:customers.2
 credits	assets/customers/customers_large.json	/^        "credits": 20$/;"	n	object:customers.10
 credits	assets/customers/customers_large.json	/^        "credits": 20$/;"	n	object:customers.13
@@ -332,9 +335,16 @@ dietary_restrictions	assets/species.json	/^      "dietary_restrictions": [$/;"	a
 dietary_restrictions	assets/species.json	/^      "dietary_restrictions": [$/;"	a	object:species.7
 dietary_restrictions	assets/species.json	/^      "dietary_restrictions": [$/;"	a	object:species.8
 dietary_restrictions	assets/species.json	/^      "dietary_restrictions": [$/;"	a	object:species.9
+display_banner	src/screen.py	/^def display_banner():$/;"	f
+display_commands	src/screen.py	/^def display_commands():$/;"	f
+display_customer	src/screen.py	/^def display_customer(customer):$/;"	f
+display_start_menu	src/screen.py	/^def display_start_menu():$/;"	f
 get_credit	src/customer.py	/^    def get_credit(self) -> str:$/;"	m	class:Customer	typeref:typename:str
 get_customer_name	src/customer.py	/^    def get_customer_name(self) -> str:$/;"	m	class:Customer	typeref:typename:str
 get_dislikes	src/species.py	/^    def get_dislikes(self) -> list[str]:$/;"	m	class:Species	typeref:typename:list[str]
+get_menu_ingredients	src/menu.py	/^    def get_menu_ingredients(self) -> list[str]:$/;"	m	class:Menu_Item	typeref:typename:list[str]
+get_menu_name	src/menu.py	/^    def get_menu_name(self) -> str:$/;"	m	class:Menu_Item	typeref:typename:str
+get_menu_price	src/menu.py	/^    def get_menu_price(self) -> int:$/;"	m	class:Menu_Item	typeref:typename:int
 get_personality	src/customer.py	/^    def get_personality(self) -> str:$/;"	m	class:Customer	typeref:typename:str
 get_preferences	src/species.py	/^    def get_preferences(self) -> list[str]:$/;"	m	class:Species	typeref:typename:list[str]
 get_restrictions	src/species.py	/^    def get_restrictions(self) -> list[str]:$/;"	m	class:Species	typeref:typename:list[str]
@@ -365,9 +375,12 @@ least_preferred_ingredients	assets/species.json	/^      "least_preferred_ingredi
 least_preferred_ingredients	assets/species.json	/^      "least_preferred_ingredients": [$/;"	a	object:species.7
 least_preferred_ingredients	assets/species.json	/^      "least_preferred_ingredients": [$/;"	a	object:species.9
 load_customers	src/customer.py	/^def load_customers(filename: str, species: dict[str, Species]) -> list[Customer]:$/;"	f	typeref:typename:list[Customer]
+load_ingredients	src/menu.py	/^def load_ingredients(filename: str) -> dict:$/;"	f	typeref:typename:dict
+load_menu	src/menu.py	/^def load_menu(filename: str) -> dict[str, Menu_Item]:$/;"	f	typeref:typename:dict[str,Menu_Item]
 load_species	src/species.py	/^def load_species(filename: str) -> dict[str, Species]:$/;"	f	typeref:typename:dict[str,Species]
 main	src/galaxy_cafe.py	/^def main():$/;"	f
 menu	assets/menu.json	/^    "menu": [$/;"	a
+menu_list	src/menu.py	/^def menu_list(menu_items) -> str:$/;"	f	typeref:typename:str
 name	assets/customers/customers_large.json	/^        "name": "Algorthus Xiron",$/;"	s	object:customers.3
 name	assets/customers/customers_large.json	/^        "name": "Binaryon Fluxorix",$/;"	s	object:customers.2
 name	assets/customers/customers_large.json	/^        "name": "Blixer Eradikron",$/;"	s	object:customers.7
@@ -486,6 +499,8 @@ price	assets/menu.json	/^            "price": 20$/;"	n	object:menu.1
 price	assets/menu.json	/^            "price": 23$/;"	n	object:menu.6
 price	assets/menu.json	/^            "price": 26$/;"	n	object:menu.10
 price	assets/menu.json	/^            "price": 28$/;"	n	object:menu.11
+set_credit	src/customer.py	/^    def set_credit(self, credit: int):$/;"	m	class:Customer
+show_menu	src/screen.py	/^def show_menu(customers, ingredients, menu_items):$/;"	f
 species	assets/customers/customers_large.json	/^        "species": "Algorithmians",$/;"	s	object:customers.3
 species	assets/customers/customers_large.json	/^        "species": "Bit-Byte Beings",$/;"	s	object:customers.6
 species	assets/customers/customers_large.json	/^        "species": "Booleanites",$/;"	s	object:customers.11
