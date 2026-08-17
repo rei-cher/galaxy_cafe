@@ -28,9 +28,9 @@ def load_species(filename: str) -> dict[str, Species]:
     for record in data["species"]:
         new_species = Species(
                 record["name"],
-                record["dietary_restrictions"],
-                record["preferred_ingredients"],
-                record["least_preferred_ingredients"]
+                [] if record["dietary_restrictions"] == "None" else record["dietary_restrictions"],
+                [] if record["preferred_ingredients"] == "None" else record["preferred_ingredients"],
+                [] if record["least_preferred_ingredients"] == "None" else record["least_preferred_ingredients"]
                 )
 
         species[record["name"]] = new_species

@@ -284,6 +284,7 @@ The Galactic Cafe - Rubric	docs/rubric.md	/^# The Galactic Cafe - Rubric$/;"	c
 __init__	src/customer.py	/^    def __init__(self, name: str, species: str, personality: str, credit: int):$/;"	m	class:Customer
 __init__	src/menu.py	/^    def __init__(self, name: str, ingredients: list[str], price: int):$/;"	m	class:Menu_Item
 __init__	src/species.py	/^    def __init__(self, name: str, restrictions: list[str], preferences: list[str], dislikes: lis/;"	m	class:Species
+alien_dossier	src/helpers.py	/^def alien_dossier(customer) -> str:$/;"	f	typeref:typename:str
 clear_screen	src/terminal.py	/^def clear_screen():$/;"	f
 credits	assets/customers/customers_large.json	/^        "credits": 15$/;"	n	object:customers.2
 credits	assets/customers/customers_large.json	/^        "credits": 20$/;"	n	object:customers.10

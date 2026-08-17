@@ -3,6 +3,7 @@ import sys
 
 from menu import menu_list, show_dish, show_ingredients
 from terminal import clear_screen, display_customer
+from helpers import alien_dossier
 
 def display_start_menu():
     clear_screen()
@@ -23,7 +24,7 @@ def display_start_menu():
 def display_commands():
     print("(1) Menu")
     print("(2) Ingredients")
-    print("(3) Alien Dossier")
+    print("(3) Species Details")
     print("(4) Serve")
     print("(5) Next Customer")
     print("(6) Progress")
@@ -38,7 +39,7 @@ def display_commands():
         case "2":
             nav = "INGREDIENTS"
         case "3":
-            nav = "DOSSIER"
+            nav = "DETAILS"
         case "4":
             nav = "SERVE"
         case "5":
@@ -73,6 +74,11 @@ def show_menu(customers, ingredients, menu_items):
             clear_screen()
             display_customer(customers[customer])
             state = show_ingredients(ingredients)
+
+        if state == "DETAILS":
+            clear_screen()
+            display_customer(customers[customer])
+            state = alien_dossier(customers[customer])
 
         if state == "SERVE":
             clear_screen()
