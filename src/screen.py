@@ -1,16 +1,8 @@
 import os
 import sys
 
-from menu import menu_list
-
-def display_banner():
-    print("++++++++++++++++++")
-    print("   Galaxt Cafe")
-    print("++++++++++++++++++")
-
-def clear_screen():
-    os.system("cls" if os.name == "nt" else "clear")
-    display_banner()
+from menu import menu_list, show_dish, show_ingredients
+from terminal import clear_screen, display_customer
 
 def display_start_menu():
     clear_screen()
@@ -28,21 +20,13 @@ def display_start_menu():
 
     return nav
 
-def display_customer(customer):
-    print()
-    print(f"Customer: {customer.get_customer_name()} "
-          f"({customer.get_species().get_species_name()}) "
-          f"{customer.get_personality()} "
-          f"Credits: {customer.get_credit()}"
-          )
-    print()
-
 def display_commands():
     print("(1) Menu")
     print("(2) Ingredients")
     print("(3) Alien Dossier")
     print("(4) Serve")
-    print("(5) Progress")
+    print("(5) Next Customer")
+    print("(6) Progress")
     print("(9) Exit")
 
     nav = "CAFE"
@@ -58,6 +42,8 @@ def display_commands():
         case "4":
             nav = "SERVE"
         case "5":
+            nav = "NEXT CUSTOMER"
+        case "6":
             nav = "PROGRESS"
         case "9":
             nav = "EXIT"
@@ -70,7 +56,6 @@ def show_menu(customers, ingredients, menu_items):
 
     while state != "EXIT":
         
-
         if state == "MAIN_MENU":
             state = display_start_menu()
 
@@ -84,10 +69,18 @@ def show_menu(customers, ingredients, menu_items):
             display_customer(customers[customer])
             state = menu_list(menu_items)
 
+        if state == "INGREDIENTS":
+            clear_screen()
+            display_customer(customers[customer])
+            state = show_ingredients(ingredients)
 
         if state == "SERVE":
-            customer+=1
-            state = "CAFE"
+            clear_screen()
+            state = show_dish(menu_items, customers[customer])
+            
+            if state == "SERVED":
+                #customer+=1
+                state = "CAFE"
 
     os.system("cls" if os.name == "nt" else "clear")
     sys.exit(1)

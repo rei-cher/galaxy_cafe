@@ -284,7 +284,7 @@ The Galactic Cafe - Rubric	docs/rubric.md	/^# The Galactic Cafe - Rubric$/;"	c
 __init__	src/customer.py	/^    def __init__(self, name: str, species: str, personality: str, credit: int):$/;"	m	class:Customer
 __init__	src/menu.py	/^    def __init__(self, name: str, ingredients: list[str], price: int):$/;"	m	class:Menu_Item
 __init__	src/species.py	/^    def __init__(self, name: str, restrictions: list[str], preferences: list[str], dislikes: lis/;"	m	class:Species
-clear_screen	src/screen.py	/^def clear_screen():$/;"	f
+clear_screen	src/terminal.py	/^def clear_screen():$/;"	f
 credits	assets/customers/customers_large.json	/^        "credits": 15$/;"	n	object:customers.2
 credits	assets/customers/customers_large.json	/^        "credits": 20$/;"	n	object:customers.10
 credits	assets/customers/customers_large.json	/^        "credits": 20$/;"	n	object:customers.13
@@ -335,9 +335,9 @@ dietary_restrictions	assets/species.json	/^      "dietary_restrictions": [$/;"	a
 dietary_restrictions	assets/species.json	/^      "dietary_restrictions": [$/;"	a	object:species.7
 dietary_restrictions	assets/species.json	/^      "dietary_restrictions": [$/;"	a	object:species.8
 dietary_restrictions	assets/species.json	/^      "dietary_restrictions": [$/;"	a	object:species.9
-display_banner	src/screen.py	/^def display_banner():$/;"	f
+display_banner	src/terminal.py	/^def display_banner():$/;"	f
 display_commands	src/screen.py	/^def display_commands():$/;"	f
-display_customer	src/screen.py	/^def display_customer(customer):$/;"	f
+display_customer	src/terminal.py	/^def display_customer(customer):$/;"	f
 display_start_menu	src/screen.py	/^def display_start_menu():$/;"	f
 get_credit	src/customer.py	/^    def get_credit(self) -> str:$/;"	m	class:Customer	typeref:typename:str
 get_customer_name	src/customer.py	/^    def get_customer_name(self) -> str:$/;"	m	class:Customer	typeref:typename:str
@@ -499,7 +499,10 @@ price	assets/menu.json	/^            "price": 20$/;"	n	object:menu.1
 price	assets/menu.json	/^            "price": 23$/;"	n	object:menu.6
 price	assets/menu.json	/^            "price": 26$/;"	n	object:menu.10
 price	assets/menu.json	/^            "price": 28$/;"	n	object:menu.11
+serve_dish	src/helpers.py	/^def serve_dish(dish, customer):$/;"	f
 set_credit	src/customer.py	/^    def set_credit(self, credit: int):$/;"	m	class:Customer
+show_dish	src/menu.py	/^def show_dish(menu_items, customer) -> str:$/;"	f	typeref:typename:str
+show_ingredients	src/menu.py	/^def show_ingredients(ingredients: dict):$/;"	f
 show_menu	src/screen.py	/^def show_menu(customers, ingredients, menu_items):$/;"	f
 species	assets/customers/customers_large.json	/^        "species": "Algorithmians",$/;"	s	object:customers.3
 species	assets/customers/customers_large.json	/^        "species": "Bit-Byte Beings",$/;"	s	object:customers.6
