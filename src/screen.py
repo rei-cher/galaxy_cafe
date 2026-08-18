@@ -8,7 +8,7 @@ from helpers import alien_dossier
 def display_start_menu():
     clear_screen()
     print("(1) Open Cafe")
-    print("(9) Close")
+    print("(9) Exit")
 
     nav = "MAIN_MENU"
     choice = input("> ")
@@ -43,7 +43,7 @@ def display_commands():
         case "4":
             nav = "SERVE"
         case "5":
-            nav = "NEXT CUSTOMER"
+            nav = "NEXT"
         case "6":
             nav = "PROGRESS"
         case "9":
@@ -54,9 +54,10 @@ def display_commands():
 def show_menu(customers, ingredients, menu_items):
     state = "MAIN_MENU"
     customer = 0
+    points = 0
 
     while state != "EXIT":
-        
+
         if state == "MAIN_MENU":
             state = display_start_menu()
 
@@ -81,12 +82,16 @@ def show_menu(customers, ingredients, menu_items):
             state = alien_dossier(customers[customer])
 
         if state == "SERVE":
-            clear_screen()
             state = show_dish(menu_items, customers[customer])
             
             if state == "SERVED":
-                #customer+=1
                 state = "CAFE"
+
+        if state == "NEXT":
+            customer = (customer + 1) % len(customers)
+            state = "CAFE"
+
+
 
     os.system("cls" if os.name == "nt" else "clear")
     sys.exit(1)
