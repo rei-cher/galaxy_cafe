@@ -80,14 +80,18 @@ def menu_list(menu_items) -> str:
 
     return nav
 
-def show_dish(menu_items, customer) -> str:
+def show_dish(menu_items, ingredients, game) -> str:
     menu_items = list(menu_items.values())
     item = 0
+
     nav = "SERVE"
 
     while True:
         clear_screen()
-        display_customer(customer)
+        
+        customer = game.get_current_customer()
+
+        display_customer(customer, game)
 
         print("++++++++++")
         print("|  DISH  |")
@@ -104,14 +108,11 @@ def show_dish(menu_items, customer) -> str:
         
         match choice:
             case "1":
-                serve_dish(menu_items[item], customer)
-                nav = "SERVED"
+                serve_dish(menu_items[item], ingredients, game)
+                nav = "CAFE"
                 break
             case "2":
-                if item == len(menu_items)-1:
-                    item = 0
-                else :
-                    item+=1
+                item = (item + 1) % len(menu_items)
             case "6":
                 nav = "CAFE"
                 break
@@ -120,5 +121,3 @@ def show_dish(menu_items, customer) -> str:
                 break
 
     return nav
-
-        

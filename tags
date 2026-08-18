@@ -256,6 +256,7 @@ Exoplanet Eggplant	assets/menu.json	/^        "Exoplanet Eggplant": "Common",$/;
 Galactic Garlic	assets/menu.json	/^        "Galactic Garlic": "Common",$/;"	s	object:ingredients
 Galaxy Cafe	docs/galaxy_cafe_resources.md	/^# Galaxy Cafe$/;"	c
 Galaxy Grains	assets/menu.json	/^        "Galaxy Grains": "Common",$/;"	s	object:ingredients
+GameState	src/game_state.py	/^class GameState:$/;"	c
 Helpful Resources	docs/galaxy_cafe_resources.md	/^## Helpful Resources$/;"	s	chapter:Galaxy Cafe
 Hints	docs/galactic_cafe_instructions.md	/^## Hints$/;"	s	chapter:The Galactic Cafe
 Interstellar Iceberg Lettuce	assets/menu.json	/^        "Interstellar Iceberg Lettuce": "Rare",$/;"	s	object:ingredients
@@ -282,9 +283,16 @@ Supernova Saffron	assets/menu.json	/^        "Supernova Saffron": "Rare",$/;"	s	
 The Galactic Cafe	docs/galactic_cafe_instructions.md	/^# The Galactic Cafe$/;"	c
 The Galactic Cafe - Rubric	docs/rubric.md	/^# The Galactic Cafe - Rubric$/;"	c
 __init__	src/customer.py	/^    def __init__(self, name: str, species: str, personality: str, credit: int):$/;"	m	class:Customer
+__init__	src/game_state.py	/^    def __init__(self, customers):$/;"	m	class:GameState
 __init__	src/menu.py	/^    def __init__(self, name: str, ingredients: list[str], price: int):$/;"	m	class:Menu_Item
 __init__	src/species.py	/^    def __init__(self, name: str, restrictions: list[str], preferences: list[str], dislikes: lis/;"	m	class:Species
+add_profit	src/game_state.py	/^    def add_profit(self, prof):$/;"	m	class:GameState
+add_reputation	src/game_state.py	/^    def add_reputation(self, rep):$/;"	m	class:GameState
 alien_dossier	src/helpers.py	/^def alien_dossier(customer) -> str:$/;"	f	typeref:typename:str
+calculate_profit	src/helpers.py	/^def calculate_profit(dish, ingredients, game):$/;"	f
+calculate_rep_budget	src/helpers.py	/^def calculate_rep_budget(dish, game):$/;"	f
+calculate_rep_personality	src/helpers.py	/^def calculate_rep_personality(dish, ingredients, game):$/;"	f
+calculate_rep_species	src/helpers.py	/^def calculate_rep_species(dish, ingredients, game):$/;"	f
 clear_screen	src/terminal.py	/^def clear_screen():$/;"	f
 credits	assets/customers/customers_large.json	/^        "credits": 15$/;"	n	object:customers.2
 credits	assets/customers/customers_large.json	/^        "credits": 20$/;"	n	object:customers.10
@@ -338,9 +346,10 @@ dietary_restrictions	assets/species.json	/^      "dietary_restrictions": [$/;"	a
 dietary_restrictions	assets/species.json	/^      "dietary_restrictions": [$/;"	a	object:species.9
 display_banner	src/terminal.py	/^def display_banner():$/;"	f
 display_commands	src/screen.py	/^def display_commands():$/;"	f
-display_customer	src/terminal.py	/^def display_customer(customer):$/;"	f
+display_customer	src/terminal.py	/^def display_customer(customer, game):$/;"	f
 display_start_menu	src/screen.py	/^def display_start_menu():$/;"	f
 get_credit	src/customer.py	/^    def get_credit(self) -> str:$/;"	m	class:Customer	typeref:typename:str
+get_current_customer	src/game_state.py	/^    def get_current_customer(self):$/;"	m	class:GameState
 get_customer_name	src/customer.py	/^    def get_customer_name(self) -> str:$/;"	m	class:Customer	typeref:typename:str
 get_dislikes	src/species.py	/^    def get_dislikes(self) -> list[str]:$/;"	m	class:Species	typeref:typename:list[str]
 get_menu_ingredients	src/menu.py	/^    def get_menu_ingredients(self) -> list[str]:$/;"	m	class:Menu_Item	typeref:typename:list[str]
@@ -348,9 +357,12 @@ get_menu_name	src/menu.py	/^    def get_menu_name(self) -> str:$/;"	m	class:Menu
 get_menu_price	src/menu.py	/^    def get_menu_price(self) -> int:$/;"	m	class:Menu_Item	typeref:typename:int
 get_personality	src/customer.py	/^    def get_personality(self) -> str:$/;"	m	class:Customer	typeref:typename:str
 get_preferences	src/species.py	/^    def get_preferences(self) -> list[str]:$/;"	m	class:Species	typeref:typename:list[str]
+get_profit_credits	src/game_state.py	/^    def get_profit_credits(self):$/;"	m	class:GameState
+get_reputation	src/game_state.py	/^    def get_reputation(self):$/;"	m	class:GameState
 get_restrictions	src/species.py	/^    def get_restrictions(self) -> list[str]:$/;"	m	class:Species	typeref:typename:list[str]
 get_species	src/customer.py	/^    def get_species(self) -> Species:$/;"	m	class:Customer	typeref:typename:Species
 get_species_name	src/species.py	/^    def get_species_name(self) -> str:$/;"	m	class:Species	typeref:typename:str
+get_state	src/game_state.py	/^    def get_state(self):$/;"	m	class:GameState
 ingredients	assets/menu.json	/^            "ingredients": ["Astro Mushroom", "Galactic Garlic", "Nebula Noodles", "Comet Cheese/;"	a	object:menu.7
 ingredients	assets/menu.json	/^            "ingredients": ["Astro Mushroom", "Galactic Garlic", "Stellar Kale", "Nebula Nuts", /;"	a	object:menu.1
 ingredients	assets/menu.json	/^            "ingredients": ["Astro Mushroom", "Stellar Kale", "Galactic Garlic", "Nebula Noodles/;"	a	object:menu.5
@@ -441,6 +453,7 @@ name	assets/species.json	/^      "name": "Debugians",$/;"	s	object:species.8
 name	assets/species.json	/^      "name": "Logic Lords",$/;"	s	object:species.7
 name	assets/species.json	/^      "name": "Pixel Protectors",$/;"	s	object:species.10
 name	assets/species.json	/^      "name": "Scripting Sylphs",$/;"	s	object:species.5
+next_customer	src/game_state.py	/^    def next_customer(self):$/;"	m	class:GameState
 personality	assets/customers/customers_large.json	/^        "personality": "adventurous",$/;"	s	object:customers.1
 personality	assets/customers/customers_large.json	/^        "personality": "adventurous",$/;"	s	object:customers.12
 personality	assets/customers/customers_large.json	/^        "personality": "adventurous",$/;"	s	object:customers.14
@@ -500,11 +513,13 @@ price	assets/menu.json	/^            "price": 20$/;"	n	object:menu.1
 price	assets/menu.json	/^            "price": 23$/;"	n	object:menu.6
 price	assets/menu.json	/^            "price": 26$/;"	n	object:menu.10
 price	assets/menu.json	/^            "price": 28$/;"	n	object:menu.11
-serve_dish	src/helpers.py	/^def serve_dish(dish, customer):$/;"	f
+serve_dish	src/helpers.py	/^def serve_dish(dish, ingredients, game):$/;"	f
 set_credit	src/customer.py	/^    def set_credit(self, credit: int):$/;"	m	class:Customer
-show_dish	src/menu.py	/^def show_dish(menu_items, customer) -> str:$/;"	f	typeref:typename:str
+set_reputation	src/game_state.py	/^    def set_reputation(self,rep):$/;"	m	class:GameState
+set_state	src/game_state.py	/^    def set_state(self, state):$/;"	m	class:GameState
+show_dish	src/menu.py	/^def show_dish(menu_items, ingredients, game) -> str:$/;"	f	typeref:typename:str
 show_ingredients	src/menu.py	/^def show_ingredients(ingredients: dict):$/;"	f
-show_menu	src/screen.py	/^def show_menu(customers, ingredients, menu_items):$/;"	f
+show_menu	src/screen.py	/^def show_menu(game, ingredients, menu_items):$/;"	f
 species	assets/customers/customers_large.json	/^        "species": "Algorithmians",$/;"	s	object:customers.3
 species	assets/customers/customers_large.json	/^        "species": "Bit-Byte Beings",$/;"	s	object:customers.6
 species	assets/customers/customers_large.json	/^        "species": "Booleanites",$/;"	s	object:customers.11

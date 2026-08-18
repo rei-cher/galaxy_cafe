@@ -51,45 +51,39 @@ def display_commands():
 
     return nav
 
-def show_menu(customers, ingredients, menu_items):
-    state = "MAIN_MENU"
-    customer = 0
-    points = 0
+def show_menu(game, ingredients, menu_items):
+    while game.get_state() != "EXIT":
+        customer = game.get_current_customer()
+        match game.get_state():
+            case "MAIN_MENU":
+                game.set_state(display_start_menu())
 
-    while state != "EXIT":
+            case "CAFE":
+                clear_screen()
+                display_customer(customer, game)
+                game.set_state(display_commands())
 
-        if state == "MAIN_MENU":
-            state = display_start_menu()
+            case "MENU":
+                clear_screen()
+                display_customer(customer, game)
+                game.set_state(menu_list(menu_items))
 
-        if state == "CAFE":
-            clear_screen()
-            display_customer(customers[customer])
-            state = display_commands()
+            case "INGREDIENTS":
+                clear_screen()
+                display_customer(customer, game)
+                game.set_state(show_ingredients(ingredients))
 
-        if state == "MENU":
-            clear_screen()
-            display_customer(customers[customer])
-            state = menu_list(menu_items)
+            case "DETAILS":
+                clear_screen()
+                display_customer(customer, game)
+                game.set_state(alien_dossier(customer))
 
-        if state == "INGREDIENTS":
-            clear_screen()
-            display_customer(customers[customer])
-            state = show_ingredients(ingredients)
+            case "SERVE":
+                game.set_state(show_dish(menu_items, ingredients, game))
 
-        if state == "DETAILS":
-            clear_screen()
-            display_customer(customers[customer])
-            state = alien_dossier(customers[customer])
-
-        if state == "SERVE":
-            state = show_dish(menu_items, customers[customer])
-            
-            if state == "SERVED":
-                state = "CAFE"
-
-        if state == "NEXT":
-            customer = (customer + 1) % len(customers)
-            state = "CAFE"
+            case "NEXT":
+                game.next_customer()
+                game.set_state("CAFE")
 
 
 
