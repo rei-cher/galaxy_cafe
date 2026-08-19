@@ -2,7 +2,7 @@ import os
 import sys
 
 from menu import menu_list, show_dish, show_ingredients
-from terminal import clear_screen, display_customer
+from terminal import clear_screen, display_customer, game_over
 from helpers import alien_dossier
 
 def display_start_menu():
@@ -54,6 +54,8 @@ def display_commands():
 def show_menu(game, ingredients, menu_items):
     while game.get_state() != "EXIT":
         customer = game.get_current_customer()
+
+
         match game.get_state():
             case "MAIN_MENU":
                 game.set_state(display_start_menu())
@@ -84,7 +86,6 @@ def show_menu(game, ingredients, menu_items):
             case "NEXT":
                 game.next_customer()
                 game.set_state("CAFE")
-
 
 
     os.system("cls" if os.name == "nt" else "clear")

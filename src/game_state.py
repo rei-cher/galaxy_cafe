@@ -4,6 +4,7 @@ class GameState:
         self._customer_index = 0
         self._reputation = 0
         self._profit_credits = 0
+        self._overall_rep = 0
         self._customers = customers
 
     def get_current_customer(self):
@@ -17,6 +18,15 @@ class GameState:
 
     def get_profit_credits(self):
         return self._profit_credits
+
+    def get_overall_rep(self):
+        return self._overall_rep
+
+    def get_customer_index(self):
+        return self._customer_index
+
+    def get_customers_len(self):
+        return len(self._customers)
 
     def set_state(self, state):
         self._state = state
@@ -32,3 +42,6 @@ class GameState:
 
     def add_profit(self, prof):
         self._profit_credits += prof
+
+    def add_overall_rep(self, rep):
+        self._overall_rep += rep

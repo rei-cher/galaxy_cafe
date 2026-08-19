@@ -15,8 +15,20 @@ def display_customer(customer, game):
           f"({customer.get_species().get_species_name()}) "
           f"{customer.get_personality()} "
           f"Credits: {customer.get_credit()}\n"
-          f"\t\tReputation: {game.get_reputation()}\n"
+          f"Reputation for previous choice: {game.get_reputation()}\n"
+          f"\t\tOverall Reputation: {game.get_overall_rep()}\n"
           f"\t\tTotal Profit: {game.get_profit_credits()}"
           )
     print()
+
+def game_over(game):
+    clear_screen()
+    print(f"GAME OVER\n"
+          f"Overall reputation: {game.get_overall_rep()}\n"
+          f"Total profit: {game.get_profit_credits()}"
+          f"\nState: {game.get_state()}"
+          )
+
+    if input("Press enter to exit"):
+        return "EXIT"
 

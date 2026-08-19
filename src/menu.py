@@ -109,6 +109,8 @@ def show_dish(menu_items, ingredients, game) -> str:
         match choice:
             case "1":
                 serve_dish(menu_items[item], ingredients, game)
+                game.add_overall_rep(game.get_reputation())
+                game.next_customer()
                 nav = "CAFE"
                 break
             case "2":
