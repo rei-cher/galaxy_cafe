@@ -286,6 +286,7 @@ __init__	src/customer.py	/^    def __init__(self, name: str, species: str, perso
 __init__	src/game_state.py	/^    def __init__(self, customers):$/;"	m	class:GameState
 __init__	src/menu.py	/^    def __init__(self, name: str, ingredients: list[str], price: int):$/;"	m	class:Menu_Item
 __init__	src/species.py	/^    def __init__(self, name: str, restrictions: list[str], preferences: list[str], dislikes: lis/;"	m	class:Species
+add_overall_rep	src/game_state.py	/^    def add_overall_rep(self, rep):$/;"	m	class:GameState
 add_profit	src/game_state.py	/^    def add_profit(self, prof):$/;"	m	class:GameState
 add_reputation	src/game_state.py	/^    def add_reputation(self, rep):$/;"	m	class:GameState
 alien_dossier	src/helpers.py	/^def alien_dossier(customer) -> str:$/;"	f	typeref:typename:str
@@ -348,13 +349,17 @@ display_banner	src/terminal.py	/^def display_banner():$/;"	f
 display_commands	src/screen.py	/^def display_commands():$/;"	f
 display_customer	src/terminal.py	/^def display_customer(customer, game):$/;"	f
 display_start_menu	src/screen.py	/^def display_start_menu():$/;"	f
+game_over	src/terminal.py	/^def game_over(game):$/;"	f
 get_credit	src/customer.py	/^    def get_credit(self) -> str:$/;"	m	class:Customer	typeref:typename:str
 get_current_customer	src/game_state.py	/^    def get_current_customer(self):$/;"	m	class:GameState
+get_customer_index	src/game_state.py	/^    def get_customer_index(self):$/;"	m	class:GameState
 get_customer_name	src/customer.py	/^    def get_customer_name(self) -> str:$/;"	m	class:Customer	typeref:typename:str
+get_customers_len	src/game_state.py	/^    def get_customers_len(self):$/;"	m	class:GameState
 get_dislikes	src/species.py	/^    def get_dislikes(self) -> list[str]:$/;"	m	class:Species	typeref:typename:list[str]
 get_menu_ingredients	src/menu.py	/^    def get_menu_ingredients(self) -> list[str]:$/;"	m	class:Menu_Item	typeref:typename:list[str]
 get_menu_name	src/menu.py	/^    def get_menu_name(self) -> str:$/;"	m	class:Menu_Item	typeref:typename:str
 get_menu_price	src/menu.py	/^    def get_menu_price(self) -> int:$/;"	m	class:Menu_Item	typeref:typename:int
+get_overall_rep	src/game_state.py	/^    def get_overall_rep(self):$/;"	m	class:GameState
 get_personality	src/customer.py	/^    def get_personality(self) -> str:$/;"	m	class:Customer	typeref:typename:str
 get_preferences	src/species.py	/^    def get_preferences(self) -> list[str]:$/;"	m	class:Species	typeref:typename:list[str]
 get_profit_credits	src/game_state.py	/^    def get_profit_credits(self):$/;"	m	class:GameState

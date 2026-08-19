@@ -14,10 +14,10 @@ def display_customer(customer, game):
     print(f"Customer: {customer.get_customer_name()} "
           f"({customer.get_species().get_species_name()}) "
           f"{customer.get_personality()} "
-          f"Credits: {customer.get_credit()}\n"
+          f"Credits: {customer.get_credit():.2f}\n"
           f"Reputation for previous choice: {game.get_reputation()}\n"
           f"\t\tOverall Reputation: {game.get_overall_rep()}\n"
-          f"\t\tTotal Profit: {game.get_profit_credits()}"
+          f"\t\tTotal Profit: {game.get_profit_credits():.2f}"
           )
     print()
 

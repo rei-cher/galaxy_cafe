@@ -64,7 +64,7 @@ def menu_list(menu_items) -> str:
     for menu_item in menu_items.values():
         print(f"{menu_item.get_menu_name()}\n"
               f"\tIngredients: {', '.join(menu_item.get_menu_ingredients())}\n"
-              f"\tPrice: {menu_item.get_menu_price()}\n")
+              f"\tPrice: {menu_item.get_menu_price():.2f}\n")
 
     print("(6) Back")
     print("(9) Exit")
@@ -98,7 +98,7 @@ def show_dish(menu_items, ingredients, game) -> str:
         print("++++++++++")
         print(f"{menu_items[item].get_menu_name()}\n"
                f"\tIngredients: {', '.join(menu_items[item].get_menu_ingredients())}\n"
-               f"\tPrice: {menu_items[item].get_menu_price()}\n")
+              f"\tPrice: {menu_items[item].get_menu_price():.2f}\n")
         print("\n\n(1) Serve")
         print("(2) Next Dish")
         print("(6) Back")
