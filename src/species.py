@@ -1,5 +1,7 @@
 import json
 
+from decor import path_exists
+
 class Species:
     def __init__(self, name: str, restrictions: list[str], preferences: list[str], dislikes: list[str]):
         self._species_name = name
@@ -19,6 +21,7 @@ class Species:
     def get_dislikes(self) -> list[str]:
         return self._dislikes
 
+@path_exists
 def load_species(filename: str) -> dict[str, Species]:
     with open(filename, "r") as file:
         data = json.load(file)

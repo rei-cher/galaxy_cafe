@@ -1,5 +1,6 @@
 import json
 
+from decor import path_exists
 from species import Species
 
 class Customer(Species):
@@ -31,6 +32,7 @@ class Customer(Species):
     def set_credit(self, credit: int):
         self._credit = credit
 
+@path_exists
 def load_customers(filename: str, species: dict[str, Species]) -> list[Customer]:
     with open(filename, "r") as file:
         data = json.load(file)

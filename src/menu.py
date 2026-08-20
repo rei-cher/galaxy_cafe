@@ -1,5 +1,6 @@
 import json
 
+from decor import path_exists
 from helpers import serve_dish
 from terminal import clear_screen, display_customer
 
@@ -18,6 +19,7 @@ class Menu_Item:
     def get_menu_price(self) -> int:
         return self._price
 
+@path_exists
 def load_ingredients(filename: str) -> dict:
     with open(filename, "r") as file:
         data = json.load(file)
@@ -43,6 +45,7 @@ def show_ingredients(ingredients: dict):
 
     return nav
 
+@path_exists
 def load_menu(filename: str) -> dict[str, Menu_Item]:
     with open(filename, "r") as file:
         data = json.load(file)
