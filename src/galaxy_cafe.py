@@ -1,3 +1,10 @@
+"""
+Main modulo
+
+Initializes and loads all json files on startup
+Initializes game state with the list of customers
+Executes main menu loop
+"""
 import sys
 
 from game_state import GameState
@@ -7,6 +14,9 @@ from customer import load_customers
 from menu import load_ingredients, load_menu
 
 def main():
+    """
+    Main function that performs all tasks listed in the modulo description
+    """
     if len(sys.argv) != 4:
         print(f"Usage: {sys.argv[0]} <species.json> <customers.json> <menu.json>"
               )

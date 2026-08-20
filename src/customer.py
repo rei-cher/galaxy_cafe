@@ -1,10 +1,32 @@
+"""
+Customer modulo
+
+Declares customer class
+Loads and formats data from json file
+"""
 import json
 
 from decor import path_exists
 from species import Species
 
 class Customer(Species):
+    """
+    Customer class
+
+    Inherits Species class
+
+    Requires:
+        name: str
+        species: str
+        personality: str
+        credit: int
+    """
     def __init__(self, name: str, species: str, personality: str, credit: int):
+        """
+        Object initializator
+
+        Populates properties from provided arguments
+        """
         super().__init__(
                 species.get_species_name(),
                 species.get_restrictions(),
@@ -18,22 +40,40 @@ class Customer(Species):
 
 
     def get_customer_name(self) -> str:
+        """
+        Returns name of the customer
+        """
         return self._customer_name
 
     def get_species(self) -> Species:
+        """
+        Returns species object
+        """
         return self._species
 
     def get_personality(self) -> str:
+        """
+        Returns personality of the customer
+        """
         return self._personality
 
     def get_credit(self) -> str:
+        """
+        Returns available customer's credits
+        """
         return self._credit
 
     def set_credit(self, credit: int):
+        """
+        Sets customer's credit to the value
+        """
         self._credit = credit
 
 @path_exists
 def load_customers(filename: str, species: dict[str, Species]) -> list[Customer]:
+    """
+    Reads provided json file and returns list of Customer objects
+    """
     with open(filename, "r") as file:
         data = json.load(file)
 

@@ -1,6 +1,14 @@
+"""
+Helpers modulo
+
+Helper functions
+"""
 import game_state
 
 def calculate_rep_species(dish, ingredients, game):
+    """
+    Calcualtes reputation based on the species criteria
+    """
     customer = game.get_current_customer()
     
     for ingredient in ingredients.keys():

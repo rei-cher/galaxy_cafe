@@ -1,15 +1,29 @@
+"""
+Terminal modulo
+
+Menu screen behaviors
+"""
 import os
 
 def display_banner():
+    """
+    Prints Galaxy cafe banner
+    """
     print("++++++++++++++++++")
-    print("   Galaxt Cafe")
+    print("   Galaxy Cafe")
     print("++++++++++++++++++")
 
 def clear_screen():
+    """
+    Clears the screen
+    """
     os.system("cls" if os.name == "nt" else "clear")
     display_banner()
 
 def display_customer(customer, game):
+    """
+    Prints out current customer information like name, species, etc
+    """
     print()
     print(f"Customer: {customer.get_customer_name()} "
           f"({customer.get_species().get_species_name()}) "
@@ -22,6 +36,9 @@ def display_customer(customer, game):
     print()
 
 def game_over(game):
+    """
+    Prints game over screen with stats
+    """
     clear_screen()
     print(f"GAME OVER\n"
           f"Overall reputation: {game.get_overall_rep()}\n"
