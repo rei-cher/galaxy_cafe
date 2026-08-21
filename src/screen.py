@@ -1,3 +1,8 @@
+"""
+Screen modulo
+
+Defines main menu screens and submenus
+"""
 import os
 import sys
 
@@ -6,6 +11,9 @@ from terminal import clear_screen, display_customer, game_over
 from helpers import alien_dossier
 
 def display_start_menu():
+    """
+    Displays startup menu
+    """
     clear_screen()
     print("(1) Open Cafe")
     print("(9) Exit")
@@ -22,6 +30,9 @@ def display_start_menu():
     return nav
 
 def display_commands():
+    """
+    Displays submenu of main menu with commands 
+    """
     print("(1) Menu")
     print("(2) Ingredients")
     print("(3) Species Details")
@@ -52,6 +63,9 @@ def display_commands():
     return nav
 
 def show_menu(game, ingredients, menu_items):
+    """
+    Displays main menu
+    """
     while game.get_state() != "EXIT":
         customer = game.get_current_customer()
 
