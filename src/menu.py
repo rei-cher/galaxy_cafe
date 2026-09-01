@@ -153,8 +153,6 @@ def show_dish(menu_items, ingredients, game) -> str:
 
     Return: string for the corresponding action for the main menu loop state
     """
-    menu_items = list(menu_items.values())
-    item = 0
 
     nav = "SERVE"
 
@@ -166,32 +164,31 @@ def show_dish(menu_items, ingredients, game) -> str:
         display_customer(customer, game)
 
         print("++++++++++")
-        print("|  DISH  |")
+        print("| DISHES |")
         print("++++++++++")
-        print(f"{menu_items[item].get_menu_name()}\n"
-               f"\tIngredients: {', '.join(menu_items[item].get_menu_ingredients())}\n"
-              f"\tPrice: {menu_items[item].get_menu_price():.2f}\n")
-        print("\n\n(1) Serve")
-        print("(2) Next Dish")
-        print("(6) Back")
+        for menu in menu_items:
+            print(f"{menu_items[menu].get_menu_name()} - "
+                f"Ingredients: {', '.join(menu_items[menu].get_menu_ingredients())}\n"
+                f"\tPrice: {menu_items[menu].get_menu_price():.2f}\n")
+        print(f"\nTo serve - type the name of the menu item")
+        print("\n\n(6) Back")
         print("(9) Exit")
 
         choice  = input("> ")
-        
-        match choice:
-            case "1":
-                serve_dish(menu_items[item], ingredients, game)
-                game.add_overall_rep(game.get_reputation())
-                game.next_customer()
-                nav = "CAFE"
-                break
-            case "2":
-                item = (item + 1) % len(menu_items)
-            case "6":
-                nav = "CAFE"
-                break
-            case "9":
-                nav = "EXIT"
-                break
+
+        if choice in menu_items:
+            serve_dish(menu_items[choice], ingredients, game)
+            game.add_overall_rep(game.get_reputation())
+            game.next_customer()
+            nav = "CAFE"
+            break
+        elif choice == "6":
+            nav = "CAFE"
+            break
+        elif choice == "9":
+            nav = "EXIT"
+            break
+        else:
+            continue
 
     return nav
