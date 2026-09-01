@@ -22,6 +22,7 @@ class GameState:
         self._reputation = 0
         self._profit_credits = 0
         self._overall_rep = 0
+        self._tracker = 1
         self._customers = customers
 
     def get_current_customer(self) -> Customer:
@@ -29,6 +30,9 @@ class GameState:
         Returns Customer object of the current customer
         """
         return self._customers[self._customer_index]
+
+    def get_tracker(self):
+        return self._tracker
 
     def get_state(self):
         """
@@ -91,8 +95,10 @@ class GameState:
 
         Overflow mitigation: index os moduled by the len of the customers list
         Never exceeds the lenght
+        Adds 1 to the tracker to check the number of customer that has been processed
         """
         self._customer_index = (self._customer_index + 1) % len(self._customers)
+        self._tracker += 1
 
     def add_reputation(self, rep: int):
         """
